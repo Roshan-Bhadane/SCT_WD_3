@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Trophy Cup -->
+  <path d="M60,40 L140,40 L140,60 C170,60 170,100 140,110 C135,130 120,140 100,145 C80,140 65,130 60,110 C30,100 30,60 60,60 Z" fill="#FFD700" stroke="#E6B800" stroke-width="2"/>
+  
+  <!-- Trophy Base -->
+  <rect x="80" y="145" width="40" height="10" fill="#FFD700" stroke="#E6B800" stroke-width="2"/>
+  <rect x="70" y="155" width="60" height="5" fill="#FFD700" stroke="#E6B800" stroke-width="2"/>
+  
+  <!-- Trophy Handles -->
+  <path d="M140,50 C160,50 160,80 140,80" fill="none" stroke="#E6B800" stroke-width="4"/>
+  <path d="M60,50 C40,50 40,80 60,80" fill="none" stroke="#E6B800" stroke-width="4"/>
+  
+  <!-- Trophy Shine -->
+  <ellipse cx="80" cy="70" rx="5" ry="10" fill="#FFFFFF" opacity="0.3"/>
+  
+  <!-- Star on top -->
+  <polygon points="100,20 105,35 120,35 110,45 115,60 100,50 85,60 90,45 80,35 95,35" fill="#FFFF00" stroke="#E6B800" stroke-width="1"/>
+</svg>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Game</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="light-mode">
+    <div class="theme-toggle">
+        <button id="theme-toggle-btn">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Welcome Screen -->
+    <section id="welcome-screen" class="screen active">
+        <div class="container">
+            <h1>Welcome to the Quiz Game!</h1>
+            <div class="card">
+                <h2>Enter Your Name</h2>
+                <div class="input-group">
+                    <input type="text" id="player-name" placeholder="Your Name" required>
+                </div>
+                <div class="difficulty-selection">
+                    <h3>Select Difficulty</h3>
+                    <div class="difficulty-options">
+                        <div class="difficulty-option" data-difficulty="easy">
+                            <i class="fas fa-star"></i>
+                            <span>Easy</span>
+                        </div>
+                        <div class="difficulty-option" data-difficulty="medium">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>Medium</span>
+                        </div>
+                        <div class="difficulty-option" data-difficulty="hard">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>Hard</span>
+                        </div>
+                        <div class="difficulty-option active" data-difficulty="mixed">
+                            <i class="fas fa-random"></i>
+                            <span>Mixed</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="start-btn" class="btn primary-btn">Start Quiz</button>
+                <div class="keyboard-shortcuts">
+                    <h4><i class="fas fa-keyboard"></i> Keyboard Shortcuts</h4>
+                    <ul>
+                        <li><kbd>Enter</kbd> - Start quiz / Submit answer</li>
+                        <li><kbd>F1</kbd> - Use hint</li>
+                        <li><kbd>→</kbd> - Next question</li>
+                        <li><kbd>1-4</kbd> - Select option (single choice)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Screen -->
+    <section id="quiz-screen" class="screen">
+        <div class="container">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-text">Question <span id="current-question">1</span> of <span id="total-questions">10</span></div>
+                </div>
+                <div class="quiz-controls">
+                    <button id="hint-btn" class="btn hint-btn" title="Get a hint (reduces points)">
+                        <i class="fas fa-lightbulb"></i>
+                    </button>
+                    <div class="difficulty-indicator">
+                        <span id="difficulty-badge">Medium</span>
+                    </div>
+                    <div class="timer">
+                        <i class="fas fa-clock"></i>
+                        <span id="time-remaining">30</span>s
+                    </div>
+                </div>
+            </div>
+
+            <div class="card question-card">
+                <div id="question-container">
+                    <!-- Question content will be inserted here by JavaScript -->
+                </div>
+                <div id="options-container">
+                    <!-- Options will be inserted here by JavaScript -->
+                </div>
+                <button id="next-btn" class="btn primary-btn">Next Question</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Screen -->
+    <section id="results-screen" class="screen">
+        <div class="container">
+            <h1>Quiz Completed!</h1>
+            <div class="card result-card">
+                <div class="trophy-container">
+                    <img id="trophy-img" src="assets/images/trophy-gold.png.svg" alt="Trophy">
+                </div>
+                <h2><span id="performance-message">Great job</span>, <span id="result-name">Player</span>!</h2>
+                <div class="score-container">
+                    <div class="score-text">Your Score:</div>
+                    <div class="score-value"><span id="score">0</span>/<span id="max-score">10</span></div>
+                </div>
+                <div class="buttons-container">
+                    <button id="review-btn" class="btn secondary-btn">Review Answers</button>
+                    <button id="retake-btn" class="btn primary-btn">Retake Quiz</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Screen -->
+    <section id="review-screen" class="screen">
+        <div class="container">
+            <h1>Review Your Answers</h1>
+            <div id="review-container">
+                <!-- Review content will be inserted here by JavaScript -->
+            </div>
+            <button id="back-to-results-btn" class="btn primary-btn">Back to Results</button>
+        </div>
+    </section>
+
+    <!-- Audio Elements -->
+    <audio id="correct-sound" src="assets/sounds/correct.mp3" preload="auto"></audio>
+    <audio id="incorrect-sound" src="assets/sounds/incorrect.mp3" preload="auto"></audio>
+    <audio id="complete-sound" src="assets/sounds/complete.mp3" preload="auto"></audio>
+
+    <script src="js/questions.js"></script>
+    <script src="js/confetti.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

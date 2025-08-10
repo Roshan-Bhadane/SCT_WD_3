@@ -4,7 +4,7 @@
 
 ## Demo
 
-[View Live Demo](`https://roshan-bhadane.github.io/Task3/`)
+[View Live Demo](https://roshan-bhadane.github.io/SCT_WD_3/)
 
 This quiz application is fully responsive and follows a mobile-first design approach, ensuring optimal viewing experience across all devices from smartphones to desktop monitors.
 

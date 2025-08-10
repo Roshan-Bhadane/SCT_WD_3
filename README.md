@@ -1,138 +1,113 @@
 # Interactive Quiz Game Application
 
-A fully responsive, mobile-first, and visually attractive Quiz Game Application built with HTML, CSS, and Vanilla JavaScript. This application features multiple question types, scoring, randomization, review functionality, animations, sound effects, and theme switching.
+> A modern, feature-rich quiz web application with multiple question types, scoring, theme switching, and review functionality.
+
+## Demo
+
+[View Live Demo](`https://roshan-bhadane.github.io/Task3/`)
+
+This quiz application is fully responsive and follows a mobile-first design approach, ensuring optimal viewing experience across all devices from smartphones to desktop monitors.
 
 ## Features
 
-### Core Features
-- Multiple question types:
-  - Single-select
-  - Multi-select
-  - Fill in the blanks
-  - Image-based questions
-- Score calculation and display
-- Question and option randomization
-- Review functionality for all questions and answers
-- Explanations for each question
+- **Multiple Question Types** - Single-choice, multi-choice, fill-in-the-blank, and image-based questions
+- **Dynamic Scoring** - Real-time score calculation with hint penalties
+- **Question Randomization** - Different question order each time
+- **Review Screen** - Detailed review of all questions, answers, and explanations
+- **Dark/Light Theme** - Toggle between dark and light modes with persistent preferences
+- **Countdown Timer** - Time limit for each question
+- **Keyboard Shortcuts** - Quick access to all functions (Enter, →, F1, 1-4)
+- **Difficulty Levels** - Easy, Medium, Hard, and Mixed options
+- **Responsive Design** - Adapts seamlessly to all screen sizes
+- **Sound Effects** - Audio feedback for correct/incorrect answers and quiz completion
 
-### User Interface & Styling
-- Modern card layout design
-- Light and Dark mode toggle
-- Smooth animations and transitions
-- Responsive design (mobile-first approach)
+## Technologies Used
 
-### Dynamic Elements
-- Progress bar animation
-- Countdown timer for each question
-- Score animation at the end
-- Trophy graphics based on performance
+- **HTML5** - Semantic markup structure
+- **CSS3** - With CSS variables for theming
+- **Vanilla JavaScript** - No dependencies or frameworks
 
-### Sound Effects
-- Correct answer sound
-- Incorrect answer sound
-- Quiz completion sound
+## Color Palette
 
-### Personalization
-- User name input at the start
-- Personalized greeting at the end
+The application uses a carefully selected color palette that adapts between light and dark themes:
 
-## How to Run the Project
+### Light Theme
+- **Background**: Light gray background
+- **Container**: White container background
+- **Text**: Dark gray for general text
 
-1. Clone or download this repository to your local machine.
-2. Open the `index.html` file in any modern web browser.
-3. No server setup or additional dependencies are required.
+### Dark Theme
+- **Background**: Deep blue-black background
+- **Container**: Dark blue container background
+- **Text**: Light gray for general text
 
-## Customization Instructions
+## Getting Started
 
-### Adding or Modifying Questions
+Follow these instructions to get a copy of the project up and running on your local machine:
 
-To add or modify questions, edit the `js/questions.js` file. Each question follows this structure:
+```bash
+# Clone the repository
+git clone https://github.com/Roshan-Bhadane/Task3.git
 
-```javascript
-// For single-choice questions
-{
-    id: [unique_id],
-    type: 'single',
-    question: 'Your question text here?',
-    options: [
-        'Option 1',
-        'Option 2',
-        'Option 3',
-        'Option 4'
-    ],
-    correctAnswer: [index_of_correct_option], // Zero-based index
-    explanation: 'Explanation for the correct answer'
-}
+# Navigate to the project directory
+cd Task3
 
-// For multi-select questions
-{
-    id: [unique_id],
-    type: 'multi',
-    question: 'Your multi-select question here?',
-    options: [
-        'Option 1',
-        'Option 2',
-        'Option 3',
-        'Option 4'
-    ],
-    correctAnswer: [array_of_correct_indices], // e.g., [0, 2] for options 1 and 3
-    explanation: 'Explanation for the correct answers'
-}
-
-// For fill-in-the-blank questions
-{
-    id: [unique_id],
-    type: 'fill',
-    question: 'Your fill-in-the-blank question ______.',
-    correctAnswer: 'correct_answer',
-    explanation: 'Explanation for the correct answer'
-}
-
-// For image-based questions
-{
-    id: [unique_id],
-    type: 'single', // or 'multi'
-    question: 'Your question about the image below?',
-    imageUrl: 'path/to/your/image.jpg',
-    options: [
-        'Option 1',
-        'Option 2',
-        'Option 3',
-        'Option 4'
-    ],
-    correctAnswer: [index_or_indices],
-    explanation: 'Explanation for the correct answer'
-}
+# Open index.html in your browser
 ```
 
+## Folder Structure
+
+```
+├── assets/
+│   ├── images/             # Trophy and question images
+│   └── sounds/             # Sound effect files
+├── js/
+│   ├── app.js              # Main application logic
+│   ├── confetti.js         # Confetti animation for celebration
+│   └── questions.js        # Quiz questions database
+├── styles/
+│   └── main.css            # CSS styles with theming
+├── index.html              # Main HTML file
+└── README.md               # Project documentation
+```
+
+## Usage
+
+### Basic Operation
+1. Enter your name and select difficulty level
+2. Press **Start Quiz** to begin
+3. Select your answer for each question
+4. Use the **Hint** button if needed (reduces points)
+5. Press **Next Question** to proceed
+6. View your final score and performance message
+7. Review all questions and answers
+
+### Keyboard Shortcuts
+- **Enter** - Start quiz / Submit answer
+- **→** (Right Arrow) - Next question
+- **F1** - Use hint
+- **1-4** - Select option (single choice questions)
+
+## Customization
+
+### Adding or Modifying Questions
+Edit the `js/questions.js` file to add or modify questions following the existing structure for different question types.
+
 ### Customizing Styling
+Modify the CSS variables in the `:root` selector in `styles/main.css` to change colors, sizes, and other design elements.
 
-To modify the appearance of the quiz:
+### Replacing Sound Effects and Images
+Replace files in the `assets/sounds/` and `assets/images/` directories with your own files, maintaining the same filenames or updating references in the code.
 
-1. Edit the CSS variables in the `:root` selector in `styles/main.css` to change colors, sizes, and other design elements.
-2. Modify specific component styles in their respective sections in the CSS file.
+## Contributing
 
-### Replacing Sound Effects
-
-To use your own sound effects:
-
-1. Replace the placeholder files in the `assets/sounds/` directory with your own MP3 files.
-2. Make sure to keep the same filenames or update the references in the HTML file.
-
-### Replacing Images
-
-To use your own images:
-
-1. Replace the placeholder files in the `assets/images/` directory with your own image files.
-2. Update the file paths in the `questions.js` file for image-based questions.
-3. Update the trophy images in the `assets/images/` directory or modify their references in the JavaScript code.
-
-## Credits
-
-- Placeholder trophy images: Created as SVG illustrations for this project
-- Placeholder sound effects: Text files representing sound effects
-- Font Awesome: Used for icons (via CDN)
+Contributions are welcome and greatly appreciated! If you'd like to contribute to this project, please fork the repository and create a pull request with your changes. Feel free to open issues for any bugs found or enhancements you'd like to suggest.
 
 ## License
 
 This project is available for personal and educational use.
+
+## Author
+
+[Roshan Bhadane](https://github.com/Roshan-Bhadane)
+        
